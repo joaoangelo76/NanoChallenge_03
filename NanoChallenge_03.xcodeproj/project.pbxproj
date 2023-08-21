@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0225F60A2A93E6EF001DF42E /* GamesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0225F6092A93E6EF001DF42E /* GamesListView.swift */; };
+		0225F60C2A93E701001DF42E /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0225F60B2A93E701001DF42E /* DetailView.swift */; };
+		0225F60E2A93E717001DF42E /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0225F60D2A93E717001DF42E /* FavoritesView.swift */; };
+		0225F6102A93E72D001DF42E /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0225F60F2A93E72D001DF42E /* Game.swift */; };
+		0225F6132A93E776001DF42E /* GameProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0225F6122A93E776001DF42E /* GameProvider.swift */; };
+		0225F6152A93E879001DF42E /* CoreDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0225F6142A93E879001DF42E /* CoreDataController.swift */; };
+		0225F6172A93E9DF001DF42E /* NetworkingErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0225F6162A93E9DF001DF42E /* NetworkingErrors.swift */; };
 		439DDA0A2A93CE30008BBCDA /* NanoChallenge_03App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439DDA092A93CE30008BBCDA /* NanoChallenge_03App.swift */; };
 		439DDA0C2A93CE30008BBCDA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439DDA0B2A93CE30008BBCDA /* ContentView.swift */; };
 		439DDA0E2A93CE31008BBCDA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 439DDA0D2A93CE31008BBCDA /* Assets.xcassets */; };
@@ -14,6 +21,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0225F6092A93E6EF001DF42E /* GamesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesListView.swift; sourceTree = "<group>"; };
+		0225F60B2A93E701001DF42E /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		0225F60D2A93E717001DF42E /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
+		0225F60F2A93E72D001DF42E /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		0225F6122A93E776001DF42E /* GameProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameProvider.swift; sourceTree = "<group>"; };
+		0225F6142A93E879001DF42E /* CoreDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataController.swift; sourceTree = "<group>"; };
+		0225F6162A93E9DF001DF42E /* NetworkingErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingErrors.swift; sourceTree = "<group>"; };
 		439DDA062A93CE30008BBCDA /* NanoChallenge_03.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NanoChallenge_03.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		439DDA092A93CE30008BBCDA /* NanoChallenge_03App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NanoChallenge_03App.swift; sourceTree = "<group>"; };
 		439DDA0B2A93CE30008BBCDA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -32,6 +46,51 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0225F6042A93E684001DF42E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				439DDA0B2A93CE30008BBCDA /* ContentView.swift */,
+				0225F6092A93E6EF001DF42E /* GamesListView.swift */,
+				0225F60B2A93E701001DF42E /* DetailView.swift */,
+				0225F60D2A93E717001DF42E /* FavoritesView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		0225F6062A93E695001DF42E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0225F60F2A93E72D001DF42E /* Game.swift */,
+				0225F6162A93E9DF001DF42E /* NetworkingErrors.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		0225F6072A93E6A5001DF42E /* API */ = {
+			isa = PBXGroup;
+			children = (
+				0225F6062A93E695001DF42E /* Models */,
+				0225F6112A93E744001DF42E /* ViewModels */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		0225F6082A93E6AD001DF42E /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				0225F6142A93E879001DF42E /* CoreDataController.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		0225F6112A93E744001DF42E /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				0225F6122A93E776001DF42E /* GameProvider.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		439DD9FD2A93CE30008BBCDA = {
 			isa = PBXGroup;
 			children = (
@@ -51,8 +110,10 @@
 		439DDA082A93CE30008BBCDA /* NanoChallenge_03 */ = {
 			isa = PBXGroup;
 			children = (
+				0225F6042A93E684001DF42E /* Views */,
+				0225F6072A93E6A5001DF42E /* API */,
+				0225F6082A93E6AD001DF42E /* CoreData */,
 				439DDA092A93CE30008BBCDA /* NanoChallenge_03App.swift */,
-				439DDA0B2A93CE30008BBCDA /* ContentView.swift */,
 				439DDA0D2A93CE31008BBCDA /* Assets.xcassets */,
 				439DDA0F2A93CE31008BBCDA /* Preview Content */,
 			);
@@ -137,8 +198,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0225F60E2A93E717001DF42E /* FavoritesView.swift in Sources */,
+				0225F6102A93E72D001DF42E /* Game.swift in Sources */,
+				0225F6172A93E9DF001DF42E /* NetworkingErrors.swift in Sources */,
+				0225F6152A93E879001DF42E /* CoreDataController.swift in Sources */,
+				0225F60A2A93E6EF001DF42E /* GamesListView.swift in Sources */,
+				0225F60C2A93E701001DF42E /* DetailView.swift in Sources */,
 				439DDA0C2A93CE30008BBCDA /* ContentView.swift in Sources */,
 				439DDA0A2A93CE30008BBCDA /* NanoChallenge_03App.swift in Sources */,
+				0225F6132A93E776001DF42E /* GameProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
