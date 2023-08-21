@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct NanoChallenge_03App: App {
+    @StateObject private var coreDataControler = CoreDataController()
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environment(\.managedObjectContext, coreDataControler.container.viewContext)
         }
     }
 }
