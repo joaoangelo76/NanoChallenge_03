@@ -14,6 +14,7 @@
 		0225F6132A93E776001DF42E /* GameProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0225F6122A93E776001DF42E /* GameProvider.swift */; };
 		0225F6152A93E879001DF42E /* CoreDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0225F6142A93E879001DF42E /* CoreDataController.swift */; };
 		0225F6172A93E9DF001DF42E /* NetworkingErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0225F6162A93E9DF001DF42E /* NetworkingErrors.swift */; };
+		027CBA882A94423E00123C8F /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027CBA872A94423E00123C8F /* CardView.swift */; };
 		3153E1B92A93EB3000959B69 /* CoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3153E1B72A93EB3000959B69 /* CoreDataModel.xcdatamodeld */; };
 		439DDA0A2A93CE30008BBCDA /* NanoChallenge_03App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439DDA092A93CE30008BBCDA /* NanoChallenge_03App.swift */; };
 		439DDA0C2A93CE30008BBCDA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439DDA0B2A93CE30008BBCDA /* ContentView.swift */; };
@@ -29,6 +30,7 @@
 		0225F6122A93E776001DF42E /* GameProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameProvider.swift; sourceTree = "<group>"; };
 		0225F6142A93E879001DF42E /* CoreDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataController.swift; sourceTree = "<group>"; };
 		0225F6162A93E9DF001DF42E /* NetworkingErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingErrors.swift; sourceTree = "<group>"; };
+		027CBA872A94423E00123C8F /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		3153E1B82A93EB3000959B69 /* CoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataModel.xcdatamodel; sourceTree = "<group>"; };
 		439DDA062A93CE30008BBCDA /* NanoChallenge_03.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NanoChallenge_03.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		439DDA092A93CE30008BBCDA /* NanoChallenge_03App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NanoChallenge_03App.swift; sourceTree = "<group>"; };
@@ -53,6 +55,7 @@
 			children = (
 				439DDA0B2A93CE30008BBCDA /* ContentView.swift */,
 				0225F6092A93E6EF001DF42E /* GamesListView.swift */,
+				027CBA872A94423E00123C8F /* CardView.swift */,
 				0225F60B2A93E701001DF42E /* DetailView.swift */,
 				0225F60D2A93E717001DF42E /* FavoritesView.swift */,
 			);
@@ -226,6 +229,7 @@
 				0225F60C2A93E701001DF42E /* DetailView.swift in Sources */,
 				439DDA0C2A93CE30008BBCDA /* ContentView.swift in Sources */,
 				439DDA0A2A93CE30008BBCDA /* NanoChallenge_03App.swift in Sources */,
+				027CBA882A94423E00123C8F /* CardView.swift in Sources */,
 				0225F6132A93E776001DF42E /* GameProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
