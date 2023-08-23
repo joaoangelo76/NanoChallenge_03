@@ -12,15 +12,14 @@ struct CardView: View {
     @State var game: Game?
     
     var body: some View {
-        ZStack(alignment: .bottom) {
+        VStack(spacing: 0) {
             AsyncImage(url: URL(string: game?.thumbnail ?? "")) { image in
                 image
                     .resizable()
-                    .frame(width: 170)
                     .scaledToFit()
-                    .cornerRadius(20)
+                    .cornerRadius(0)
             } placeholder: {
-                RoundedRectangle(cornerRadius: 20)
+                RoundedRectangle(cornerRadius: 0)
                     .frame(width: 170)
             }
                
@@ -28,17 +27,20 @@ struct CardView: View {
             VStack(alignment: .leading) {
                 Text(game?.title ?? "")
                     .bold()
+                    .foregroundColor(.black)
                     .lineLimit(1)
                 Text(game?.shortDescription ?? "")
                     .font(.caption)
+                    .foregroundColor(.black)
                     .lineLimit(1)
             }
             .padding()
             .frame(width: 170, alignment: .leading)
             .background(.ultraThinMaterial)
-            .cornerRadius(20)
+//            .cornerRadius(20)
         }
-        .frame(width: 170, height: 250)
+        .frame(width: 170)
+        .padding()
         .shadow(radius: 3)
     }
 }
