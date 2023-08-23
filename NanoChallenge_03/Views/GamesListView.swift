@@ -11,16 +11,27 @@ struct GamesListView: View {
     
     @StateObject private var gameProvider = GameProvider()
     
+    @State var showingSheet = false
+    private let adaptativeColumns = [GridItem(.adaptive(minimum: 170))]
+    
     var body: some View {
         NavigationStack {
-            VStack {
+            VStack (spacing: 50){
                 ScrollView {
-                    ForEach(0..<gameProvider.gamesArray.count, id: \.self) { index in
-                        Text(gameProvider.gamesArray[index].title)
+                    LazyVGrid(columns: adaptativeColumns) {
+                        
+                        ForEach(0..<gameProvider.gamesArray.count, id: \.self) { index in
+                            NavigationLink {
+                                DetailView(detailedGame: gameProvider.gamesArray[index])
+                            } label: {
+                                CardView(game: gameProvider.gamesArray[index])
+                            }
+                        }
                     }
                 }
                 
             }
+            .padding(.horizontal)
             .task {
                 do {
             //colocar user no @State da Content
@@ -37,6 +48,9 @@ struct GamesListView: View {
             }
             .navigationTitle("Games")
         }
+//        .sheet(isPresented: $showingSheet) {
+//            DetailView(detailedGame: gameProvider.gamesArray[index])
+//        }
     }
 }
 

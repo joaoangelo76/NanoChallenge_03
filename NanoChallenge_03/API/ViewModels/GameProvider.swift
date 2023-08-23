@@ -35,6 +35,7 @@ class GameProvider: ObservableObject {
         } catch {
             //Error happened because of invalid Data.
             throw GHError.invalidData
+
         }
     }
     

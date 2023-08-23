@@ -12,7 +12,7 @@ struct ContentView: View {
         TabView() {
             GamesListView()
                 .tabItem {
-                    Image(systemName: "star")
+                    Image(systemName: "magnifyingglass.circle")
                     Text("Search Games")
                 }
             FavoritesView()
