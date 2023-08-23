@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct DetailView: View {
-    
+    @Environment(\.managedObjectContext) var mangedObjContext
+
     @Environment(\.dismiss) var dismiss
     var detailedGame: Game?
     
@@ -34,9 +35,9 @@ struct DetailView: View {
             Text(detailedGame?.title ?? "")
             Text(detailedGame?.shortDescription ?? "")
         }
+
     }
 }
-
 struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
         DetailView()
