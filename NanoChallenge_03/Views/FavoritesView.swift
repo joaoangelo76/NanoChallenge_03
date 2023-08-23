@@ -9,14 +9,15 @@ import SwiftUI
 
 struct FavoritesView: View {
     
-    var coreDataController = CoreDataController()
+    @EnvironmentObject var coreDataController: CoreDataController
+    
     var body: some View {
         List {
-            ForEach(0..<coreDataController.savedGames.count) { index in
+            ForEach(coreDataController.savedGames) { game in
                 
-                Text(coreDataController.savedGames[index].title ?? "")
+                Text(game.title ?? "")
             }
-            
+            .onDelete(perform: coreDataController.deleteUser)
         }
     }
 }

@@ -14,7 +14,7 @@ struct NanoChallenge_03App: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .environment(\.managedObjectContext, coreDataControler.container.viewContext)
+                .environmentObject(coreDataControler)
         }
     }
 }

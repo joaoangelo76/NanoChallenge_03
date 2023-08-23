@@ -32,17 +32,17 @@ class CoreDataController: ObservableObject {
             }
         }
     
-    func save(context: NSManagedObjectContext){
+    func save(){
         do{
-            try context.save()
+            try container.viewContext.save()
         } catch {
             print("Error saving, try checking your storage")
         }
         fetchGames()
     }
     
-    func addGame(id: Int, title: String, thumbnail: String, gameDescription: String, genre: String, publisher: String, releaseDate: String, context:NSManagedObjectContext){
-        let game = PersistedGame(context: context)
+    func addGame(id: Int, title: String, thumbnail: String, gameDescription: String, genre: String, publisher: String, releaseDate: String){
+        let game = PersistedGame(context: container.viewContext)
         
         game.id = Int64(id)
         game.title = title
@@ -52,7 +52,14 @@ class CoreDataController: ObservableObject {
         game.publisher = publisher
         game.releaseDate = releaseDate
         
-        save(context: context)
+        save()
     }
     
+    func deleteUser(indexSet: IndexSet) {
+        guard let index = indexSet.first else { return }
+        let entity = savedGames[index]
+        container.viewContext.delete(entity)
+        
+        save()
+    }
 }

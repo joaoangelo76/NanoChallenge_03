@@ -9,7 +9,7 @@ import SwiftUI
 
 struct DetailView: View {
     
-    @Environment(\.managedObjectContext) var managedObjectContext
+    @EnvironmentObject var coreDataController: CoreDataController
     @Environment(\.dismiss) var dismiss
     var detailedGame: Game?
     
@@ -40,7 +40,7 @@ struct DetailView: View {
     }
     
     func addGame() {
-        CoreDataController().addGame(title: detailedGame?.title ?? "", thumbnail: detailedGame?.thumbnail ?? "", gameDescription: detailedGame?.shortDescription ?? "", genre: detailedGame?.genre ?? "", publisher: detailedGame?.publisher ?? "", releaseDate: detailedGame?.releaseDate ?? "", context: managedObjectContext)
+        coreDataController.addGame(id: detailedGame?.id ?? 0, title: detailedGame?.title ?? "", thumbnail: detailedGame?.thumbnail ?? "", gameDescription: detailedGame?.shortDescription ?? "", genre: detailedGame?.genre ?? "", publisher: detailedGame?.publisher ?? "", releaseDate: detailedGame?.releaseDate ?? "")
     }
 }
 struct DetailView_Previews: PreviewProvider {
