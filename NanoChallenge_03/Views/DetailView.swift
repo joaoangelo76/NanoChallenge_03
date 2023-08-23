@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct DetailView: View {
-    @Environment(\.managedObjectContext) var mangedObjContext
-
+    
+    @Environment(\.managedObjectContext) var managedObjectContext
     @Environment(\.dismiss) var dismiss
     var detailedGame: Game?
     
@@ -17,7 +17,8 @@ struct DetailView: View {
         VStack {
             
             Button {
-                
+               
+                addGame()
             } label: {
                 Image(systemName: "star")
             }
@@ -36,6 +37,10 @@ struct DetailView: View {
             Text(detailedGame?.shortDescription ?? "")
         }
 
+    }
+    
+    func addGame() {
+        CoreDataController().addGame(title: detailedGame?.title ?? "", thumbnail: detailedGame?.thumbnail ?? "", gameDescription: detailedGame?.shortDescription ?? "", genre: detailedGame?.genre ?? "", publisher: detailedGame?.publisher ?? "", releaseDate: detailedGame?.releaseDate ?? "", context: managedObjectContext)
     }
 }
 struct DetailView_Previews: PreviewProvider {

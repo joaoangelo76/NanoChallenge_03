@@ -41,9 +41,10 @@ class CoreDataController: ObservableObject {
         fetchGames()
     }
     
-    func addGame(title: String, thumbnail: String, gameDescription: String, genre: String, publisher: String, releaseDate: String, context:NSManagedObjectContext){
+    func addGame(id: Int, title: String, thumbnail: String, gameDescription: String, genre: String, publisher: String, releaseDate: String, context:NSManagedObjectContext){
         let game = PersistedGame(context: context)
         
+        game.id = Int64(id)
         game.title = title
         game.thumbnail = thumbnail
         game.gameDescription = gameDescription
