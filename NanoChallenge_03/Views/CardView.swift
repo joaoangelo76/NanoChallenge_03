@@ -43,12 +43,12 @@ struct CardView: View {
                 image
                     .resizable()
                     .scaledToFit()
-                    .cornerRadius(radius: 20.0, corners: [.topLeft, .topRight])
+                    .cornerRadius(radius: 10.0, corners: [.topLeft, .topRight])
 
             } placeholder: {
                 RoundedRectangle(cornerRadius: 0)
                     .frame(width: 170)
-                    .cornerRadius(radius: 20.0, corners: [.topLeft, .topRight])
+                    .cornerRadius(radius: 10.0, corners: [.topLeft, .topRight])
             }
             VStack(alignment: .leading) {
                 Text(game?.title ?? "")
@@ -65,7 +65,7 @@ struct CardView: View {
             .foregroundColor(Color("DifferentOrange"))
             .background(.ultraThinMaterial)
         }
-        .cornerRadius(radius: 20.0, corners: [.bottomLeft, .bottomRight])
+        .cornerRadius(radius: 10.0, corners: [.bottomLeft, .bottomRight])
         .frame(width: 170)
         .padding()
         .shadow(radius: 3)

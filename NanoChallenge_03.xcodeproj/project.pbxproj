@@ -113,6 +113,13 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		430739B72A97D825005DE66F /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		439DD9FD2A93CE30008BBCDA = {
 			isa = PBXGroup;
 			children = (
@@ -137,6 +144,7 @@
 				0225F6072A93E6A5001DF42E /* API */,
 				0225F6082A93E6AD001DF42E /* CoreData */,
 				439DDA0D2A93CE31008BBCDA /* Assets.xcassets */,
+				430739B72A97D825005DE66F /* Fonts */,
 				439DDA0F2A93CE31008BBCDA /* Preview Content */,
 			);
 			path = NanoChallenge_03;
@@ -362,6 +370,8 @@
 				DEVELOPMENT_TEAM = LF887LSVNZ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "NanoChallenge-03-Info.plist";
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -391,6 +401,8 @@
 				DEVELOPMENT_TEAM = LF887LSVNZ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "NanoChallenge-03-Info.plist";
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

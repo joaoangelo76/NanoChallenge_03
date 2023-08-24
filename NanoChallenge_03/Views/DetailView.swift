@@ -11,6 +11,8 @@ struct DetailView: View {
     
     @EnvironmentObject var coreDataController: CoreDataController
     @Environment(\.dismiss) var dismiss
+    @State private var isClicked: Bool = false
+    
     var detailedGame: Game?
     
     var body: some View {
@@ -20,27 +22,44 @@ struct DetailView: View {
                     .resizable()
                     .scaledToFit()
                     .frame(width: 450, height: 200)
-                    .cornerRadius(20)
             } placeholder: {
-                RoundedRectangle(cornerRadius: 20)
+                RoundedRectangle(cornerRadius: 10)
+                    .border(Color("DifferentOrange"), width: 3)
                     .frame(width: 450, height: 200)
             }
-            Text(detailedGame?.title ?? "\n")
-                .bold()
-                .italic()
+            HStack{
+                Text(detailedGame?.title ?? "")
+                    .foregroundColor(Color("DifferentOrange"))
+                    .padding()
+                if(isClicked == false){
+                    Button {
+                        addGame()
+                        isClicked = true
+                    } label: {
+                        Image(systemName: "star")
+                            .foregroundColor(.red)
+                    }
+                }
+                else if(isClicked == true){
+                    Button {
+                        addGame()
+                        isClicked = false
+                    } label: {
+                        Image(systemName: "star.fill")
+                            .foregroundColor(.red)
+                    }
+                }
+            }
+            Text(detailedGame?.shortDescription ?? "")
                 .padding()
-            Text(detailedGame?.shortDescription ?? "\n")
-                .padding()
+                .foregroundColor(Color("DifferentOrange"))
                 .frame(height: 20)
             Text(detailedGame?.publisher ?? "")
                 .padding()
+                .foregroundColor(Color("DifferentOrange"))
             Text(detailedGame?.releaseDate ?? "")
                 .padding()
-            Button {
-                addGame()
-            } label: {
-                Image(systemName: "star")
-            }
+                .foregroundColor(Color("DifferentOrange"))
         }
         .foregroundColor(.black)
     }
