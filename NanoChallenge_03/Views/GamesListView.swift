@@ -8,9 +8,11 @@
 import SwiftUI
 
 struct GamesListView: View {
-    
+
     @StateObject private var gameProvider = GameProvider()
     
+    @State var game: Game?
+    @State private var searchText = ""
     @State private var showingSheet = false
     @State private var selectedGame: Game? = nil
     
@@ -23,7 +25,6 @@ struct GamesListView: View {
                     LazyVGrid(columns: adaptativeColumns) {
                         
                         ForEach(0..<gameProvider.gamesArray.count, id: \.self) { index in
-                            
                             Button {
                                 showingSheet = true
                                 selectedGame = gameProvider.gamesArray[index]
@@ -33,8 +34,8 @@ struct GamesListView: View {
                         }
                     }
                 }
-                
             }
+            .background(Image("Backpocket"))
             .padding(.horizontal)
             .task {
                 do {
@@ -52,6 +53,7 @@ struct GamesListView: View {
             }
             .navigationTitle("Games")
         }
+        .searchable(text: $searchText)
         .sheet(item: $selectedGame) { game in
             DetailView(detailedGame: game)
         }

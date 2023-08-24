@@ -14,8 +14,7 @@ struct FavoritesView: View {
     var body: some View {
         List {
             ForEach(coreDataController.savedGames) { game in
-                
-                Text(game.title ?? "")
+                Text((game.title)!)
             }
             .onDelete(perform: coreDataController.deleteUser)
         }
