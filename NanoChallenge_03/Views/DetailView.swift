@@ -15,28 +15,34 @@ struct DetailView: View {
     
     var body: some View {
         VStack {
-            
-            Button {
-               
-                addGame()
-            } label: {
-                Image(systemName: "star")
-            }
-
             AsyncImage(url: URL(string: detailedGame?.thumbnail ?? "")) { image in
                 image
                     .resizable()
                     .scaledToFit()
-                    .cornerRadius(0)
+                    .frame(width: 450, height: 200)
+                    .cornerRadius(20)
             } placeholder: {
-                RoundedRectangle(cornerRadius: 0)
-                    .frame(width: 170)
+                RoundedRectangle(cornerRadius: 20)
+                    .frame(width: 450, height: 200)
             }
-
-            Text(detailedGame?.title ?? "")
-            Text(detailedGame?.shortDescription ?? "")
+            Text(detailedGame?.title ?? "\n")
+                .bold()
+                .italic()
+                .padding()
+            Text(detailedGame?.shortDescription ?? "\n")
+                .padding()
+                .frame(height: 20)
+            Text(detailedGame?.publisher ?? "")
+                .padding()
+            Text(detailedGame?.releaseDate ?? "")
+                .padding()
+            Button {
+                addGame()
+            } label: {
+                Image(systemName: "star")
+            }
         }
-
+        .foregroundColor(.black)
     }
     
     func addGame() {

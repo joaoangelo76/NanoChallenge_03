@@ -7,6 +7,32 @@
 
 import SwiftUI
 
+struct CornerRadiusShape: Shape {
+    var radius = CGFloat.infinity
+    var corners = UIRectCorner.allCorners
+
+    func path(in rect: CGRect) -> Path {
+        let path = UIBezierPath(roundedRect: rect, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
+        return Path(path.cgPath)
+    }
+}
+
+struct CornerRadiusStyle: ViewModifier {
+    var radius: CGFloat
+    var corners: UIRectCorner
+
+    func body(content: Content) -> some View {
+        content
+            .clipShape(CornerRadiusShape(radius: radius, corners: corners))
+    }
+}
+
+extension View {
+    func cornerRadius(radius: CGFloat, corners: UIRectCorner) -> some View {
+        ModifiedContent(content: self, modifier: CornerRadiusStyle(radius: radius, corners: corners))
+    }
+}
+
 struct CardView: View {
     
     @State var game: Game?
@@ -17,28 +43,29 @@ struct CardView: View {
                 image
                     .resizable()
                     .scaledToFit()
-                    .cornerRadius(0)
+                    .cornerRadius(radius: 20.0, corners: [.topLeft, .topRight])
+
             } placeholder: {
                 RoundedRectangle(cornerRadius: 0)
                     .frame(width: 170)
+                    .cornerRadius(radius: 20.0, corners: [.topLeft, .topRight])
             }
-               
-            
             VStack(alignment: .leading) {
                 Text(game?.title ?? "")
                     .bold()
-                    .foregroundColor(.black)
+                    .foregroundColor(Color("DifferentOrange"))
                     .lineLimit(1)
                 Text(game?.shortDescription ?? "")
                     .font(.caption)
-                    .foregroundColor(.black)
+                    .foregroundColor(Color("DifferentOrange"))
                     .lineLimit(1)
             }
             .padding()
             .frame(width: 170, alignment: .leading)
+            .foregroundColor(Color("DifferentOrange"))
             .background(.ultraThinMaterial)
-//            .cornerRadius(20)
         }
+        .cornerRadius(radius: 20.0, corners: [.bottomLeft, .bottomRight])
         .frame(width: 170)
         .padding()
         .shadow(radius: 3)
