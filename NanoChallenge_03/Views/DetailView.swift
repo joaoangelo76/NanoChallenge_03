@@ -45,15 +45,7 @@ struct DetailView: View {
                         coreDataController.deleteUser(indexSet: IndexSet([existingIndex]))
                     } else {
                         // Se o jogo não está na lista de favoritos, adiciona-o
-                        coreDataController.addGame(
-                            id: gameID,
-                            title: detailedGame?.title ?? "",
-                            thumbnail: detailedGame?.thumbnail ?? "",
-                            gameDescription: detailedGame?.shortDescription ?? "",
-                            genre: detailedGame?.genre ?? "",
-                            publisher: detailedGame?.publisher ?? "",
-                            releaseDate: detailedGame?.releaseDate ?? ""
-                        )
+                        addGame()
                     }
                 }
             } label: {
