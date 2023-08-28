@@ -7,9 +7,10 @@
 
 import Foundation
 import CoreData
+import CloudKit
 
 class CoreDataController: ObservableObject {
-    let container = NSPersistentContainer(name: "CoreDataModel")
+    let container = NSPersistentCloudKitContainer(name: "CoreDataModel")
     
     @Published var savedGames: [PersistedGame] = []
     
@@ -19,6 +20,9 @@ class CoreDataController: ObservableObject {
                 print("Error \(error.localizedDescription), unable to load data")
             }
         }
+        container.viewContext.automaticallyMergesChangesFromParent = true
+        container.viewContext.mergePolicy = NSMergeByPropertyStoreTrumpMergePolicy
+        
         fetchGames()
     }
     
@@ -46,11 +50,6 @@ class CoreDataController: ObservableObject {
         
         game.id = Int64(id)
         game.title = title
-        game.thumbnail = thumbnail
-        game.gameDescription = gameDescription
-        game.genre = genre
-        game.publisher = publisher
-        game.releaseDate = releaseDate
         
         save()
     }
