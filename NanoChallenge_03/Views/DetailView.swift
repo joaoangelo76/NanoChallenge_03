@@ -70,6 +70,34 @@ struct DetailView: View {
                 .font(.custom("Laira", size: 20))
                 .padding()
                 .foregroundColor(.white)
+
+            Button {
+                // Verifica se há um ID de jogo disponível
+                if let gameID = detailedGame?.id {
+                    // Verifica se o jogo já está na lista de favoritos pelo seu ID
+                    if let existingIndex = coreDataController.savedGames.firstIndex(where: { $0.id == gameID }) {
+                        // Se o jogo já está na lista de favoritos, remove-o
+                        coreDataController.deleteUser(indexSet: IndexSet([existingIndex]))
+                    } else {
+                        // Se o jogo não está na lista de favoritos, adiciona-o
+                        addGame()
+                    }
+                }
+            } label: {
+                // Verifica se há um ID de jogo disponível para alterar o ícone do botão
+                if let gameID = detailedGame?.id {
+                    // Altera o ícone do botão para preenchido ("star.fill") se o jogo estiver na lista de favoritos, caso contrário, usa o ícone vazio ("star")
+                    Image(systemName: coreDataController.savedGames.contains { $0.id == gameID } ? "star.fill" : "star")
+                } else {
+                    // Usa o ícone vazio ("star") como padrão se não houver ID de jogo
+                    Image(systemName: "star")
+                }
+            }
+
+
+
+
+
         }
         .foregroundColor(.black)
     }
