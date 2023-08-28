@@ -15,6 +15,7 @@ struct NanoChallenge_03App: App {
         WindowGroup {
             ContentView()
                 .environmentObject(coreDataControler)
+                .preferredColorScheme(.dark)
         }
     }
 }

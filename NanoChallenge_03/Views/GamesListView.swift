@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct GamesListView: View {
-
+    
     @StateObject private var gameProvider = GameProvider()
     
     @State var game: Game?
@@ -16,7 +16,27 @@ struct GamesListView: View {
     @State private var showingSheet = false
     @State private var selectedGame: Game? = nil
     
+    var filteredGames: [Game]{
+        guard !searchText.isEmpty else { return gameProvider.gamesArray}
+        return gameProvider.gamesArray.filter { $0.title.localizedCaseInsensitiveContains(searchText)
+        }
+    }
+
     private let adaptativeColumns = [GridItem(.adaptive(minimum: 150))]
+    
+    init() {
+        let appear = UINavigationBarAppearance()
+
+        let atters: [NSAttributedString.Key: Any] = [
+            .font: UIFont(name: "Laira", size: 35)!
+        ]
+
+        appear.largeTitleTextAttributes = atters
+        appear.titleTextAttributes = atters
+        UINavigationBar.appearance().standardAppearance = appear
+        UINavigationBar.appearance().compactAppearance = appear
+        UINavigationBar.appearance().scrollEdgeAppearance = appear
+     }
     
     var body: some View {
         NavigationStack {
@@ -24,7 +44,7 @@ struct GamesListView: View {
                 ScrollView {
                     LazyVGrid(columns: adaptativeColumns) {
                         
-                        ForEach(0..<gameProvider.gamesArray.count, id: \.self) { index in
+                        ForEach(0..<filteredGames.count, id: \.self) { index in
                             Button {
                                 showingSheet = true
                                 selectedGame = gameProvider.gamesArray[index]
@@ -35,7 +55,7 @@ struct GamesListView: View {
                     }
                 }
             }
-            .background(Image("Backpocket"))
+            .background(Image("Backpocket").ignoresSafeArea())
             .padding(.horizontal)
             .task {
                 do {
@@ -53,7 +73,7 @@ struct GamesListView: View {
             }
             .navigationTitle("Games")
         }
-        .searchable(text: $searchText)
+        .searchable(text: $searchText, prompt: "Search Games")
         .sheet(item: $selectedGame) { game in
             DetailView(detailedGame: game)
         }

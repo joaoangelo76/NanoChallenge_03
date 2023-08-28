@@ -11,6 +11,8 @@ struct DetailView: View {
     
     @EnvironmentObject var coreDataController: CoreDataController
     @Environment(\.dismiss) var dismiss
+    @State private var isClicked: Bool = false
+    
     var detailedGame: Game?
     
     var body: some View {
@@ -18,24 +20,57 @@ struct DetailView: View {
             AsyncImage(url: URL(string: detailedGame?.thumbnail ?? "")) { image in
                 image
                     .resizable()
-                    .scaledToFit()
-                    .frame(width: 450, height: 200)
-                    .cornerRadius(20)
+                    .border(Color("DifferentOrange"), width: 3)
+                    .cornerRadius(10)
+                    .frame(width: 350, height: 200)
             } placeholder: {
-                RoundedRectangle(cornerRadius: 20)
-                    .frame(width: 450, height: 200)
+                RoundedRectangle(cornerRadius: 10)
+                    .border(Color("DifferentOrange"), width: 3)
+                    .frame(width: 350, height: 200)
             }
-            Text(detailedGame?.title ?? "\n")
-                .bold()
-                .italic()
+            HStack{
+                Text(detailedGame?.title ?? "")
+                    .bold()
+                    .tracking(0.5)
+                    .foregroundColor(.white)
+                    .padding()
+                    .font(.custom("Laira", size: 30))
+                if(isClicked == false){
+                    Button {
+                        addGame()
+                        isClicked = true
+                    } label: {
+                        Image(systemName: "star")
+                            .foregroundColor(.red)
+                    }
+                }
+                else if(isClicked == true){
+                    Button {
+                        addGame()
+                        isClicked = false
+                    } label: {
+                        Image(systemName: "star.fill")
+                            .foregroundColor(.red)
+                    }
+                }
+            }
+            Text(detailedGame?.shortDescription ?? "")
+                .lineLimit(4)
+                .font(.custom("Calibri", size: 20))
                 .padding()
-            Text(detailedGame?.shortDescription ?? "\n")
-                .padding()
+                .foregroundColor(.white)
                 .frame(height: 20)
             Text(detailedGame?.publisher ?? "")
+                .bold()
+                .tracking(0.5)
+                .font(.custom("Laira", size: 20))
                 .padding()
+                .foregroundColor(.white)
             Text(detailedGame?.releaseDate ?? "")
+                .font(.custom("Laira", size: 20))
                 .padding()
+                .foregroundColor(.white)
+
             Button {
                 // Verifica se há um ID de jogo disponível
                 if let gameID = detailedGame?.id {
