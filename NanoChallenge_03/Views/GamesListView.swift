@@ -11,6 +11,9 @@ struct GamesListView: View {
     
     @StateObject private var gameProvider = GameProvider()
     
+    //Instance of class SearchableViewModel
+    @StateObject private var searhViewModel = SearchableViewModel()
+    
     @State var game: Game?
     @State private var searchText = ""
     @State private var showingSheet = false
@@ -46,7 +49,7 @@ struct GamesListView: View {
                 ScrollView {
                     LazyVGrid(columns: adaptativeColumns) {
                         
-                        ForEach(0..<filteredGames.count, id: \.self) { index in
+                        ForEach(searhViewModel.isSearching ? 0..<searhViewModel.filteredGames.count : 0..<filteredGames.count, id: \.self) { index in
                             Button {
                                 showingSheet = true
                                 selectedGame = gameProvider.gamesArray[index]
@@ -56,6 +59,7 @@ struct GamesListView: View {
                         }
                     }
                 }
+                .searchable(text: $searhViewModel.searchableText, prompt: "Search Games")
             }
             .background(Image("Backpocket").ignoresSafeArea())
             Rectangle()
@@ -76,10 +80,11 @@ struct GamesListView: View {
                 } catch {
                     print("unexpected error")
                 }
+                await searhViewModel.loadGames()
+
             }
             .navigationTitle("Games")
         }
-        .searchable(text: $searchText, prompt: "Search Games")
         .sheet(item: $selectedGame) { game in
             DetailView(detailedGame: game)
         }
