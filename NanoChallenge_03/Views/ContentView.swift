@@ -63,7 +63,7 @@ struct Home:View{
                                 .frame(width: 25, height: 25)
                                 .foregroundColor(selectedTab == image ? getColor(image: image) : Color.gray)
                                 .padding(selectedTab == image ? 15:0)
-                                .background(Color.red.opacity(selectedTab == image ? 1:0).clipShape(Circle()))
+                                .background(Color("OneMoreOrange").opacity(selectedTab == image ? 1:0).clipShape(Circle()))
                                 .matchedGeometryEffect(id: image, in: Animation)
                                 .offset(x: selectedTab == image ? (reader.frame(in: .global).minX - reader.frame(in: .global).midX) : 0,y: selectedTab == image ? -50 : 0)
                     }
@@ -79,7 +79,7 @@ struct Home:View{
             }
             .padding(.horizontal, 30)
             .padding(.vertical)
-            .background(Color.red.clipShape(CustomShape(xAxis: xAxis)).cornerRadius(12))
+            .background(Color("OneMoreOrange").clipShape(CustomShape(xAxis: xAxis)).cornerRadius(12))
             .padding(.horizontal)
             //Bottom Edge...
             .padding(.bottom, UIApplication.shared.windows.first?.safeAreaInsets.bottom)

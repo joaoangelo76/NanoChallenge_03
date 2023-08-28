@@ -35,6 +35,7 @@ struct DetailView: View {
                     .foregroundColor(.white)
                     .padding()
                     .font(.custom("Laira", size: 30))
+                
                 if(isClicked == false){
                     Button {
                         addGame()
@@ -56,10 +57,11 @@ struct DetailView: View {
             }
             Text(detailedGame?.shortDescription ?? "")
                 .lineLimit(4)
-                .font(.custom("Calibri", size: 20))
+                .font(.custom("NTF-Grand-Italic", size: 20))
                 .padding()
                 .foregroundColor(.white)
-                .frame(height: 20)
+                .multilineTextAlignment(.center)
+                .lineLimit(3)
             Text(detailedGame?.publisher ?? "")
                 .bold()
                 .tracking(0.5)
