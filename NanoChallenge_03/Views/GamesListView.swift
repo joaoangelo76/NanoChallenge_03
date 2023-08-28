@@ -24,6 +24,20 @@ struct GamesListView: View {
 
     private let adaptativeColumns = [GridItem(.adaptive(minimum: 150))]
     
+    init() {
+        let appear = UINavigationBarAppearance()
+
+        let atters: [NSAttributedString.Key: Any] = [
+            .font: UIFont(name: "Laira", size: 35)!
+        ]
+
+        appear.largeTitleTextAttributes = atters
+        appear.titleTextAttributes = atters
+        UINavigationBar.appearance().standardAppearance = appear
+        UINavigationBar.appearance().compactAppearance = appear
+        UINavigationBar.appearance().scrollEdgeAppearance = appear
+     }
+    
     var body: some View {
         NavigationStack {
             VStack (spacing: 5){

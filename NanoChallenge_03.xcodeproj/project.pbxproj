@@ -16,6 +16,8 @@
 		0225F6172A93E9DF001DF42E /* NetworkingErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0225F6162A93E9DF001DF42E /* NetworkingErrors.swift */; };
 		027CBA882A94423E00123C8F /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027CBA872A94423E00123C8F /* CardView.swift */; };
 		3153E1B92A93EB3000959B69 /* CoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3153E1B72A93EB3000959B69 /* CoreDataModel.xcdatamodeld */; };
+		43979A2F2A991E22000D0279 /* Laira-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 43979A2D2A991E22000D0279 /* Laira-Italic.otf */; };
+		43979A302A991E22000D0279 /* Laira.otf in Resources */ = {isa = PBXBuildFile; fileRef = 43979A2E2A991E22000D0279 /* Laira.otf */; };
 		439DDA0A2A93CE30008BBCDA /* NanoChallenge_03App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439DDA092A93CE30008BBCDA /* NanoChallenge_03App.swift */; };
 		439DDA0C2A93CE30008BBCDA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439DDA0B2A93CE30008BBCDA /* ContentView.swift */; };
 		439DDA0E2A93CE31008BBCDA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 439DDA0D2A93CE31008BBCDA /* Assets.xcassets */; };
@@ -32,6 +34,8 @@
 		0225F6162A93E9DF001DF42E /* NetworkingErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingErrors.swift; sourceTree = "<group>"; };
 		027CBA872A94423E00123C8F /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		3153E1B82A93EB3000959B69 /* CoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataModel.xcdatamodel; sourceTree = "<group>"; };
+		43979A2D2A991E22000D0279 /* Laira-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Laira-Italic.otf"; sourceTree = "<group>"; };
+		43979A2E2A991E22000D0279 /* Laira.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Laira.otf; sourceTree = "<group>"; };
 		439DDA062A93CE30008BBCDA /* NanoChallenge_03.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NanoChallenge_03.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		439DDA092A93CE30008BBCDA /* NanoChallenge_03App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NanoChallenge_03App.swift; sourceTree = "<group>"; };
 		439DDA0B2A93CE30008BBCDA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -116,6 +120,8 @@
 		430739B72A97D825005DE66F /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				43979A2D2A991E22000D0279 /* Laira-Italic.otf */,
+				43979A2E2A991E22000D0279 /* Laira.otf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -216,6 +222,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43979A2F2A991E22000D0279 /* Laira-Italic.otf in Resources */,
+				43979A302A991E22000D0279 /* Laira.otf in Resources */,
 				439DDA112A93CE31008BBCDA /* Preview Assets.xcassets in Resources */,
 				439DDA0E2A93CE31008BBCDA /* Assets.xcassets in Resources */,
 			);

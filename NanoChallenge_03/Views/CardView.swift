@@ -53,17 +53,18 @@ struct CardView: View {
             VStack(alignment: .leading) {
                 Text(game?.title ?? "")
                     .bold()
-                    .foregroundColor(Color("DifferentOrange"))
+                    .font(.custom("Laira", size: 20))
+                    .tracking(0.5)
+                    .foregroundColor(.white)
                     .lineLimit(1)
                 Text(game?.shortDescription ?? "")
-                    .font(.caption)
-                    .foregroundColor(Color("DifferentOrange"))
+                    .font(.caption2)
+                    .foregroundColor(.white)
                     .lineLimit(1)
             }
             .padding()
             .frame(width: 170, alignment: .leading)
-            .foregroundColor(Color("DifferentOrange"))
-            .background(.ultraThinMaterial)
+            .background(.black)
         }
         .cornerRadius(radius: 10.0, corners: [.bottomLeft, .bottomRight])
         .frame(width: 170)

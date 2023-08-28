@@ -20,17 +20,21 @@ struct DetailView: View {
             AsyncImage(url: URL(string: detailedGame?.thumbnail ?? "")) { image in
                 image
                     .resizable()
-                    .scaledToFit()
-                    .frame(width: 450, height: 200)
+                    .border(Color("DifferentOrange"), width: 3)
+                    .cornerRadius(10)
+                    .frame(width: 350, height: 200)
             } placeholder: {
                 RoundedRectangle(cornerRadius: 10)
                     .border(Color("DifferentOrange"), width: 3)
-                    .frame(width: 450, height: 200)
+                    .frame(width: 350, height: 200)
             }
             HStack{
                 Text(detailedGame?.title ?? "")
-                    .foregroundColor(Color("DifferentOrange"))
+                    .bold()
+                    .tracking(0.5)
+                    .foregroundColor(.white)
                     .padding()
+                    .font(.custom("Laira", size: 30))
                 if(isClicked == false){
                     Button {
                         addGame()
@@ -51,15 +55,21 @@ struct DetailView: View {
                 }
             }
             Text(detailedGame?.shortDescription ?? "")
+                .lineLimit(4)
+                .font(.custom("Calibri", size: 20))
                 .padding()
-                .foregroundColor(Color("DifferentOrange"))
+                .foregroundColor(.white)
                 .frame(height: 20)
             Text(detailedGame?.publisher ?? "")
+                .bold()
+                .tracking(0.5)
+                .font(.custom("Laira", size: 20))
                 .padding()
-                .foregroundColor(Color("DifferentOrange"))
+                .foregroundColor(.white)
             Text(detailedGame?.releaseDate ?? "")
+                .font(.custom("Laira", size: 20))
                 .padding()
-                .foregroundColor(Color("DifferentOrange"))
+                .foregroundColor(.white)
         }
         .foregroundColor(.black)
     }
