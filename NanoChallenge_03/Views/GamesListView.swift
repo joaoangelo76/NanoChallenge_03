@@ -16,6 +16,8 @@ struct GamesListView: View {
     @State private var showingSheet = false
     @State private var selectedGame: Game? = nil
     
+    let uiscreen = UIScreen.main.bounds
+    
     var filteredGames: [Game]{
         guard !searchText.isEmpty else { return gameProvider.gamesArray}
         return gameProvider.gamesArray.filter { $0.title.localizedCaseInsensitiveContains(searchText)
@@ -56,6 +58,10 @@ struct GamesListView: View {
                 }
             }
             .background(Image("Backpocket").ignoresSafeArea())
+            Rectangle()
+                .fill(LinearGradient(colors: [.clear, .black], startPoint: .top, endPoint: .bottom))
+                .ignoresSafeArea()
+                .frame(width: 600, height: 15)
             .padding(.horizontal)
             .task {
                 do {

@@ -58,7 +58,7 @@ struct CardView: View {
                     .foregroundColor(.white)
                     .lineLimit(1)
                 Text(game?.shortDescription ?? "")
-                    .font(.caption2)
+                    .font(.custom("NTF-Grand-Italic", size: 15))
                     .foregroundColor(.white)
                     .lineLimit(1)
             }

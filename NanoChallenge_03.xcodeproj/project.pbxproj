@@ -22,6 +22,7 @@
 		439DDA0C2A93CE30008BBCDA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439DDA0B2A93CE30008BBCDA /* ContentView.swift */; };
 		439DDA0E2A93CE31008BBCDA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 439DDA0D2A93CE31008BBCDA /* Assets.xcassets */; };
 		439DDA112A93CE31008BBCDA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 439DDA102A93CE31008BBCDA /* Preview Assets.xcassets */; };
+		43C8B8CE2A9D21D600D400AA /* NTF-Grand-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 43C8B8CD2A9D21D600D400AA /* NTF-Grand-Italic.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		439DDA0B2A93CE30008BBCDA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		439DDA0D2A93CE31008BBCDA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		439DDA102A93CE31008BBCDA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		43C8B8CD2A9D21D600D400AA /* NTF-Grand-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NTF-Grand-Italic.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +125,7 @@
 			children = (
 				43979A2D2A991E22000D0279 /* Laira-Italic.otf */,
 				43979A2E2A991E22000D0279 /* Laira.otf */,
+				43C8B8CD2A9D21D600D400AA /* NTF-Grand-Italic.otf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -226,6 +229,7 @@
 			files = (
 				43979A2F2A991E22000D0279 /* Laira-Italic.otf in Resources */,
 				43979A302A991E22000D0279 /* Laira.otf in Resources */,
+				43C8B8CE2A9D21D600D400AA /* NTF-Grand-Italic.otf in Resources */,
 				439DDA112A93CE31008BBCDA /* Preview Assets.xcassets in Resources */,
 				439DDA0E2A93CE31008BBCDA /* Assets.xcassets in Resources */,
 			);
