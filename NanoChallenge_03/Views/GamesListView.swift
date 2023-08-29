@@ -19,8 +19,6 @@ struct GamesListView: View {
     @State private var showingSheet = false
     @State private var selectedGame: Game? = nil
     
-    let uiscreen = UIScreen.main.bounds
-    
     var filteredGames: [Game]{
         guard !searchText.isEmpty else { return gameProvider.gamesArray}
         return gameProvider.gamesArray.filter { $0.title.localizedCaseInsensitiveContains(searchText)
@@ -54,6 +52,7 @@ struct GamesListView: View {
                                 showingSheet = true
                                 selectedGame = game
                             } label: {
+                                CardView(game: game)
                             }
                         }
                     }

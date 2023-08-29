@@ -90,11 +90,11 @@ struct Home:View{
     func getColor(image:String)->Color{
         switch image{
         case "home":
-            return Color("Purple")
+            return Color(.white)
         case "box":
-            return Color("Purple")
+            return Color(.white)
         default:
-            return Color(.purple)
+            return Color(.white)
         }
     }
 }
