@@ -29,7 +29,8 @@ struct FavoritesView: View {
         NavigationStack{
             List {
                 ForEach(coreDataController.savedGames) { game in
-                    Text((game.title)!)
+                    Text((game.title) ?? "")
+                        .font(.custom("Laira", size: 20))
                 }
                 .onDelete(perform: coreDataController.deleteUser)
             }
