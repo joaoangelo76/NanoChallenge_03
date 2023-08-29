@@ -62,12 +62,12 @@
 		0225F6042A93E684001DF42E /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				02F97CB32A9D379300A7DCCD /* ViewModels */,
 				439DDA0B2A93CE30008BBCDA /* ContentView.swift */,
 				0225F6092A93E6EF001DF42E /* GamesListView.swift */,
 				027CBA872A94423E00123C8F /* CardView.swift */,
 				0225F60B2A93E701001DF42E /* DetailView.swift */,
 				0225F60D2A93E717001DF42E /* FavoritesView.swift */,
+				02F97CB32A9D379300A7DCCD /* ViewModels */,
 			);
 			path = Views;
 			sourceTree = "<group>";
